@@ -1,0 +1,12 @@
+#grid-component {
+    display: grid;
+    gap: 0; 
+}
+
+.squareCell{
+    width: 100%;
+    height: 100%;
+    border : 1px solid black;
+    margin: 10px;
+    display: inline-block;
+}
