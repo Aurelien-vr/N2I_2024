@@ -1,5 +1,8 @@
 /* stylesheet for website (home page...) */
-
+* 
+{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 body
 {
     background-color: var(--color-background);
@@ -8,8 +11,10 @@ body
 .navbar
 {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
-    left:0; top:0;
+    margin-left:-.5em; margin-top:-.5em;
+    width: calc(100% + 1em);
     background-color: var(--color-dark-background);
 }
 
@@ -17,6 +22,8 @@ body
 {
     color: var(--color-blue);
     transition: 300ms ease color;
+    margin: 1em;
+    font-size: large;
 }
 
 .navbar-link:hover
