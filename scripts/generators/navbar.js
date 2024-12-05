@@ -1,8 +1,8 @@
 // Navigation bar generation
 
-import { Webcomponent } from './webcomponent';
+import { WebComponent } from './webcomponent';
 
-class Navbar extends Webcomponent
+class Navbar extends WebComponent
 {
     /*
     *   links: array of links to all the webpages
@@ -25,8 +25,10 @@ class Navbar extends Webcomponent
     {
         let _link = `${link}`.trim(); // forces JS to interpret link as a String
         if(_link.includes("/index.php"))
-            _link.replace("/index.php", "");
-        return _link.split('/')[_link.split('/').length - 1];
+            _link = _link.replace("/index.php", "");
+        _link = _link.split('/')[_link.split('/').length - 1];
+        _link = _link[0].toUpperCase() + _link.slice(1, _link.length);
+        return _link;
     }
 }
 

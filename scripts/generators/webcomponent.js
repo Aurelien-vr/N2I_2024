@@ -1,6 +1,6 @@
 //  generic webcomponent
 
-class Webcomponent
+class WebComponent
 {
     // HTML node this object is bound to and generates.
     htmlNode;
@@ -29,6 +29,16 @@ class Webcomponent
     {
         this.htmlNode.AddEventListener(event, e => callback);
     }
+    
+    AddStyleClass(_class)
+    {
+        this.htmlNode.classList.add(_class);
+    }
+
+    RemoveStyleClass(_class)
+    {
+        this.htmlNode.classList.remove(_class);
+    }
 }
 
-export { Webcomponent }
+export { WebComponent }
