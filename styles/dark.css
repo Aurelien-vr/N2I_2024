@@ -1,1 +1,25 @@
 /* stylesheet for website (home page...) */
+
+body
+{
+    background-color: var(--color-background);
+}
+
+.navbar
+{
+    display: flex;
+    justify-content: center;
+    left:0; top:0;
+    background-color: var(--color-dark-background);
+}
+
+.navbar-link
+{
+    color: var(--color-blue);
+    transition: 300ms ease color;
+}
+
+.navbar-link:hover
+{
+    color: var(--color-lightblue);
+}

@@ -1,8 +1,8 @@
 // Navigation bar generation
 
-import { Webcomponent } from './webcomponent';
+import { WebComponent } from './webcomponent';
 
-class Navbar extends Webcomponent
+class Navbar extends WebComponent
 {
     /*
     *   links: array of links to all the webpages
