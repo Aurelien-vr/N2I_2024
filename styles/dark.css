@@ -37,12 +37,12 @@ p
     justify-content: center;
     margin-left:-.5em; margin-top:-.5em;
     width: calc(100% + 1em);
-    background-color: var(--color-dark-background);
+    background-color: var(--color-darkblue);
 }
 
 .navbar-link
 {
-    color: var(--color-blue);
+    color: var(--color-highlight);
     border: 0.1em solid;
     border-radius: 0.35em;
     padding: 0.2em;
