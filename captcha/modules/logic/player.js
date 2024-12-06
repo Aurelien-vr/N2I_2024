@@ -9,40 +9,34 @@ const Direction = Object.freeze({
 })
 
 class Player{
-    constructor(posX,posY, grid){
+    constructor(posX,posY, gridSize){
         this.posX = posX;
         this.posY = posY;
-        this.grid = grid;
+        this.grid = new Grid(gridSize);
         this.prevPosX = null;
         this.prevPosY = null;
-        grid.getCell(posX,posY).setCellState(CellState.Player);
+        this.grid.getCell(posX,posY).setCellState(CellState.Player);
     }
      
     checkForMove(){
-        //can't move
-        if (this.checkWall(1,0) && this.checkWall(-1,0) && this.checkWall(0,1) && this.checkWall(0,-1)){
-            console.log("LOOSE");
+        let possibleMove = []
+
+        if(this.posX + 1 <= this.grid.getGridSize() && this.grid.getCell(this.posX + 1, this.posY).getCellState() == CellState.Air){
+            possibleMove.push([this.posX + 1, this.posY]);
         }
+        if(this.posX - 1 >= 0 && this.grid.getCell(this.posX - 1, this.posY).getCellState() == CellState.Air){
+            possibleMove.push([this.posX - 1, this.posY]);
+        }
+        if(this.posY + 1 <= this.grid.getGridSize() && this.grid.getCell(this.posX, this.posY + 1).getCellState() == CellState.Air){
+            possibleMove.push([this.posX, this.posY + 1]);
+        }
+        if(this.posY - 1 >= 0 && this.grid.getCell(this.posX, this.posY - 1).getCellState() == CellState.Air){
+            possibleMove.push([this.posX, this.posY - 1]);
+        }
+
+        return possibleMove;
     }
 
-    //check if there is a wall at the relative position +x +y of the player
-    //check if out of bound at the relative position +x +y of the player
-
-    checkWall(x,y){
-        if ((this.grid.getCell(this.posX + x, this.posY + y).getCellState() == CellState.Breakable) ||
-        (this.grid.getCell(this.posX + x, this.posY + y).getCellState() == CellState.Unbreakable)){
-            return true;
-        }
-    }  
-
-    outOfGrid(){
-        if(this.posX + x <= 0 ||
-            this.posY + y <= 0 ||
-            this.posX + x >= this.grid.getGridSize() ||
-            this.posY + y >= this.grid.getGridSize()){
-            return true;
-        }
-    }
 
     direction(){
         let diffX = this.posX - this.prevPosX;
@@ -60,6 +54,11 @@ class Player{
         }else{
             return "no valid"
         }
+    }
+
+
+    getGrid(){
+        return this.grid;
     }
 }
 
