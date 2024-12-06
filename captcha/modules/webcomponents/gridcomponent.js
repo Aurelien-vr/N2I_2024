@@ -1,5 +1,6 @@
 import { WebComponent } from '../../../scripts/generators/webcomponent.js';
 import { CellComponent } from './cellcomponent.js'; 
+//import { CellState } from '../../../scripts/enums/cellstate.js';
 
 class GridComponent extends WebComponent {
     constructor(size,id = 'grid-component',) {
@@ -82,13 +83,28 @@ class GridComponent extends WebComponent {
 
     // Afficher les différents types de murs en fonction des types des cellules
     // In : cell of the grid (player.getGrid().getCell(x,y);)
-    displayWalls(cell) {
-        this.updateCellStyle(cell => {
-            cell.style.backgroundImage = 'url("./ressources/BrokenWall.png")';
-            cell.style.backgroundSize = '100% 100%';
-        });
+    displayCell(cell) {
+        switch (cell.getCellState()) {
+            case CellState.Breakable:
+                this.addImageOnCell(cell.x, cell.y, './ressources/BrokenWall.png');
+                break;
+            case CellState.Unbreakable:
+                this.addImageOnCell(cell.x, cell.y, './ressources/Player.png');
+                break;
+            case CellState.PlacedByPlayer:
+                this.addImageOnCell(cell.x, cell.y, './ressources/Exit.png');
+                break;
+            case CellState.Air:
+                this.updateCellStyle(cell.x, cell.y, cell => {
+                    cell.style.backgroundImage = '';
+                });
+                break;
+            default:
+                console.error('Type de cellule inconnu');
+                break;
+        }
     }
-
+    
 }
 
 export { GridComponent }
