@@ -2,6 +2,7 @@
 * 
 {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: var(--color-highlight);
 }
 body
 {
@@ -29,4 +30,15 @@ body
 .navbar-link:hover
 {
     color: var(--color-lightblue);
+}
+
+.title
+{
+    font-size: 4em;
+    text-align: center;
+}
+
+.i
+{
+    font-style: italic;
 }
