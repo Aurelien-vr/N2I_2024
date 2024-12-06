@@ -1,1 +1,0 @@
-this directory is for all files related to the "cookie clicker" game.

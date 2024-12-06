@@ -1,0 +1,159 @@
+/* Style des boutons cookie */
+body{
+    background-image: url("images/ocean_n1.jpg");
+    overflow-x:hidden;
+}
+
+
+.cookie-button, .golden {
+    background: none;
+    border: none;
+}
+
+.cookie-button img {
+    width: 800%;  /* Augmente la taille de l'image de 800% */
+    height: auto; /* Garde les proportions de l'image */
+}
+
+/* Conteneur des boutons de défilement */
+.scroll-container {
+    display: flex;
+    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border: 1px solid #ccc;
+    position: relative;
+}
+
+.scroll-button1 img, .scroll-button2 img{
+    width: 100%;
+    height: auto;
+}
+
+/* Style des boutons dans le conteneur de défilement */
+.scroll-button1, .scroll-button2 {
+    flex: 0 0 100%; /* Chaque bouton occupe 100% de la largeur du conteneur */
+    background-color: #f0f0f0;
+    transition: transform 0.3s ease;
+}
+
+.scroll-button1 {
+    background-color: rgb(255, 255, 255); /* Couleur de fond pour la différenciation */
+}
+
+.scroll-button2 {
+    background-color: rgb(58, 58, 58); /* Couleur de fond pour la différenciation */
+}
+
+/* Style de l'outil de tooltip */
+.tooltip {
+    display: block;
+    position: absolute;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 14px;
+    border-radius: 5px;
+    display: none; /* Initialement caché */
+    white-space: normal; /* Autoriser l'affichage sur plusieurs lignes */
+}
+
+/* Conteneur de la barre de progression */
+.progress-container {
+    background-color: #ecf0f1;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 600px;
+    margin: 30px auto;
+    height: 25px;
+    box-shadow:2px 2px 5px black;
+}
+
+.progress-bar {
+    background-color: #2ecc71;
+    height: 100%;
+    width: 0; /* You can control progress dynamically */
+    border-radius: 5px;
+}
+
+/* Conteneur des boutons d'augmentation (fixés à droite de l'écran) */
+#augment {
+    position: fixed;
+    top: 50px; /* À 10px du haut de la fenêtre */
+    right: 10px; /* À 10px du bord droit de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#augment input {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#augment input:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Conteneur des boutons "Devil Deal" (fixés à droite, en dessous des boutons d'augmentation) */
+#devil {
+    position: fixed;
+    top:  300px; /* À 150px du haut de la fenêtre pour ne pas chevaucher avec #augment */
+    right: 10px; /* À 10px du bord droit de la fenêtre */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#devil button {
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#devil button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Effet de clic pour les boutons dans #augment */
+#augment input:active {
+    transform: translateY(2px); /* Le bouton semble enfoncé */
+    box-shadow: none; /* Supprime l'ombre pour un effet plus naturel */
+}
+
+/* Effet de clic pour les boutons dans #devil */
+#devil button:active {
+    transform: translateY(2px); /* Le bouton semble enfoncé */
+    box-shadow: none; /* Supprime l'ombre pour un effet plus naturel */
+}
+
+#augment input,
+#devil button {
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Douce transition pour le fond, la transformation et l'ombre */
+}
+
+#cookie-count {
+    font-size: 2rem;
+    color: #fafafa;
+    text-shadow: 2px 2px 5px black;
+    font-weight: bold;
+    margin-bottom: 20px;
+    display: block;
+    text-align: center;
+}
+
+.btnrd{
+    color: #fafafa;
+    text-shadow: 2px 2px 5px black;
+ }
