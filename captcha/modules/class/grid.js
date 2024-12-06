@@ -33,6 +33,8 @@ class Grid{
         return this.grid[x][y];
     }
 
+    getGridSize(){return this.gridSize}
+
     printGrid(){
         this.grid.forEach(row => {
             row.forEach(cell=>console.log(cell));
