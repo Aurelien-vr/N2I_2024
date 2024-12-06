@@ -6,7 +6,7 @@
         <title>Cookie cauchemar</title>
         <link href="style.css" rel="stylesheet">
     </head>
-    <bod>
+    <body>
         <span id="cookie-count"></span>
 
         <div class="progress-container">
