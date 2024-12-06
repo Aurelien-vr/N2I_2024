@@ -25,6 +25,7 @@ class Cell{
             throw new Error(`Invalid cell state: ${newState}. Must be one of ${Object.values(CellState).join(', ')}`);
         }
     }
+
 }
 
 export{Cell, CellState}

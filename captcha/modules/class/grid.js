@@ -8,11 +8,12 @@ class Grid{
 
     buildGrid() {
         let grid = [];
-        for(let i=0; i < this.gridSize; i++){
-            let row = [];
-            grid.push(row);
-            for(let j = 0; j < this.gridSize; j++){
-                grid[i].push(new Cell(i,j));
+        for (let j = 0; j < this.gridSize; j++) {
+            let column = [];
+            console.log(j);
+            grid.push(column);
+            for (let i = 0; i < this.gridSize; i++) {
+                grid[j].push(new Cell(i, j));
             }
         }
         return grid;
@@ -36,10 +37,8 @@ class Grid{
     getGridSize(){return this.gridSize}
 
     printGrid(){
-        for (let row of this.grid) {
-            let rowString = row.map(cell => cell.cellState).join(" | ");
-            console.log(rowString);
-        }
+        console.log(this.grid);
+        this.grid.forEach(row => row.forEach(cell => console.log(cell.getCellState())));
     }
 }
 

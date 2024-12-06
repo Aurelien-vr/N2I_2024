@@ -21,19 +21,24 @@ class Player{
     checkForMove(){
         let possibleMove = []
 
-        if(this.posX + 1 <= this.grid.getGridSize() && this.grid.getCell(this.posX + 1, this.posY).getCellState() == CellState.Air){
+        if(this.posX + 1 <= this.grid.getGridSize() && this.grid.getCell(this.posX + 1, this.posY).getCellState() == CellState.Air
+        && (this.posX + 1 != this.prevPosX && this.posY != this.prevPosY)){
             possibleMove.push([this.posX + 1, this.posY]);
         }
-        if(this.posX - 1 >= 0 && this.grid.getCell(this.posX - 1, this.posY).getCellState() == CellState.Air){
+        if(this.posX - 1 >= 0 && this.grid.getCell(this.posX - 1, this.posY).getCellState() == CellState.Air 
+        && (this.posX - 1 != this.prevPosX && this.posY != this.prevPosY)){
             possibleMove.push([this.posX - 1, this.posY]);
         }
-        if(this.posY + 1 <= this.grid.getGridSize() && this.grid.getCell(this.posX, this.posY + 1).getCellState() == CellState.Air){
+        if(this.posY + 1 <= this.grid.getGridSize() && this.grid.getCell(this.posX, this.posY + 1).getCellState() == CellState.Air
+        && (this.posX != this.prevPosX && this.posY + 1 != this.prevPosY)){
             possibleMove.push([this.posX, this.posY + 1]);
         }
-        if(this.posY - 1 >= 0 && this.grid.getCell(this.posX, this.posY - 1).getCellState() == CellState.Air){
+        if(this.posY - 1 >= 0 && this.grid.getCell(this.posX, this.posY - 1).getCellState() == CellState.Air
+        && (this.posX != this.prevPosX && this.posY - 1 != this.prevPosY)){
             possibleMove.push([this.posX, this.posY - 1]);
         }
 
+        console.log(possibleMove);
         return possibleMove;
     }
 
@@ -56,9 +61,37 @@ class Player{
         }
     }
 
+    randomMove(){
+        const possibleMove = this.checkForMove();
+        const move = possibleMove[Math.floor(Math.random()*possibleMove.length)];
+        console.log(move);
+        return move
+    }
+
+
+    deplacement(){
+        for(let i = 0; i < 15; i++){
+            const move = this.randomMove();
+            this.grid.getCell(this.posX,this.posY).setCellState(CellState.Air);
+            this.setPrevPos(this.posX, this.posY);
+            this.setPosition(move[0],move[1]);
+            this.grid.getCell(this.posX,this.posY).setCellState(CellState.Player);
+            this.grid.printGrid();
+        }
+    }
 
     getGrid(){
         return this.grid;
+    }
+
+    setPosition(x,y){
+        this.posX = x;
+        this.posY = y;
+    }
+
+    setPrevPos(x,y){
+        this.prevPosX = x;
+        this.prevPosY = y;
     }
 }
 
