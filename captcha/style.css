@@ -1,5 +1,11 @@
+body{
+    background-color: gray;
+}
+
 #grid-component {
     display: grid;
+    align-items: center;
+    border-color:black;
     gap: 0; 
 }
 

@@ -9,7 +9,7 @@ class GridComponent extends WebComponent {
         this.size=size;
         this.htmlNode.style.gridTemplateColumns = `repeat(${size}, 5em)`;
         this.htmlNode.style.gridTemplateRows = `repeat(${size}, 5em)`;
-        this.ListenCellClicked();
+        
     }
 
     // Ajoute un élément à la grille
@@ -58,52 +58,6 @@ class GridComponent extends WebComponent {
         });
     }
 
-    ListenCellClicked() {
-        document.addEventListener('click', function (event) {
-            // Récupère l'élément sur lequel l'utilisateur a cliqué
-            const clickedElement = event.target;
-                
-            // Récupère la valeur de l'attribut style
-            const style = clickedElement.getAttribute('style');
-    
-            // Utilise une expression régulière pour extraire les valeurs de grid-area
-            const gridAreaMatch = style.match(/grid-area:\s*(\d+)\s*\/\s*(\d+)/);
-    
-            if (gridAreaMatch) {
-                const x = parseInt(gridAreaMatch[2], 10);
-                const y = parseInt(gridAreaMatch[1], 10);
-    
-                // Affiche les valeurs de x et y dans la console
-                console.log('x:', x, 'y:', y);
-            } else {
-                console.log('grid-area non trouvé');
-            }
-        });
-    }
-
-    // Afficher les différents types de murs en fonction des types des cellules
-    // In : cell of the grid (player.getGrid().getCell(x,y);)
-    displayCell(cell) {
-        switch (cell.getCellState()) {
-            case CellState.Breakable:
-                this.addImageOnCell(cell.x, cell.y, './ressources/BrokenWall.png');
-                break;
-            case CellState.Unbreakable:
-                this.addImageOnCell(cell.x, cell.y, './ressources/Player.png');
-                break;
-            case CellState.PlacedByPlayer:
-                this.addImageOnCell(cell.x, cell.y, './ressources/Exit.png');
-                break;
-            case CellState.Air:
-                this.updateCellStyle(cell.x, cell.y, cell => {
-                    cell.style.backgroundImage = '';
-                });
-                break;
-            default:
-                console.error('Type de cellule inconnu');
-                break;
-        }
-    }
     
 }
 
