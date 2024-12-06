@@ -6,7 +6,28 @@
 }
 body
 {
-    background-color: var(--color-background);
+    background-image: url("../Fond.jpg");
+    background-size: cover;
+}
+
+h1
+{
+    margin: 8% 14%;
+    text-align: center;
+}
+
+.pV2-right
+{
+    margin: 6% 8%;
+    margin-left: 40%;
+    text-align: left;
+}
+
+p
+{
+    margin: 6% 8%;
+    margin-right: 40%;
+    text-align: left;
 }
 
 .navbar
@@ -16,20 +37,30 @@ body
     justify-content: center;
     margin-left:-.5em; margin-top:-.5em;
     width: calc(100% + 1em);
-    background-color: var(--color-dark-background);
+    background-color: var(--color-darkblue);
 }
 
 .navbar-link
 {
-    color: var(--color-blue);
-    transition: 300ms ease color;
+    color: var(--color-highlight);
+    border: 0.1em solid;
+    border-radius: 0.35em;
+    padding: 0.2em;
     margin: 1em;
     font-size: large;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    transition: ease 300ms transform .16s;
+    text-decoration: none;
 }
-
 .navbar-link:hover
 {
+    transform: translateY(-.3em) scale(1.08);
     color: var(--color-lightblue);
+    z-index: 1
 }
 
 .title

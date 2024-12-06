@@ -1,6 +1,6 @@
 // Navigation bar generation
 
-import { WebComponent } from './webcomponent';
+import { WebComponent } from './webcomponent.js';
 
 class Navbar extends WebComponent
 {
