@@ -1,5 +1,12 @@
 import { Grid } from "../class/grid.js";
-import { CellState } from "../class/cell.js";
+import { Cell,CellState } from "../class/cell.js";
+
+const Direction = Object.freeze({
+    Up: "up",
+    Left: "left",
+    Right: "right",
+    Down: "down"
+})
 
 class Player{
     constructor(posX,posY, grid){
@@ -8,6 +15,7 @@ class Player{
         this.grid = grid;
         this.prevPosX = null;
         this.prevPosY = null;
+        grid.getCell(posX,posY).setCellState(CellState.Player);
     }
      
     checkForMove(){
@@ -40,15 +48,15 @@ class Player{
         let diffX = this.posX - this.prevPosX;
         let diffY = this.posY - this.prevPosY;
         if (this.prevPosX == null || this.prevPosY == null){
-            return "up";
+            return Direction.Up;
         }else if(diffX >= 1){
-            return "right"
+            return Direction.Right;
         }else if(diffX <= -1){
-            return "left"
+            return Direction.Left;
         }else if(diffY >= 1){
-            return "down"
+            return Direction.Down;
         }else if(diffY <= -1){
-            return "up"
+            return Direction.Up;
         }else{
             return "no valid"
         }

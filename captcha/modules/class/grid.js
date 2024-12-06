@@ -36,9 +36,10 @@ class Grid{
     getGridSize(){return this.gridSize}
 
     printGrid(){
-        this.grid.forEach(row => {
-            row.forEach(cell=>console.log(cell));
-        })
+        for (let row of this.grid) {
+            let rowString = row.map(cell => cell.cellState).join(" | ");
+            console.log(rowString);
+        }
     }
 }
 
