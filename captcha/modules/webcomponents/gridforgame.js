@@ -1,10 +1,14 @@
 import { GridComponent } from "./gridcomponent";
 import { CellState,Cell } from "../class/cell.js";
-import { Direction,Player } from "../logic/player.js";
+import { Direction } from "../logic/player.js";
+import {InteractWithGrid} from "./interactwithgrid.js";
+import { lastClickedElement } from "./imginteraction.js";
 
 class GridForGame extends GridComponent {
-    constructor(size, id = 'grid-component') {
+    constructor(size,player, id = 'grid-component') {
         super(size, id);
+        this.player = player;
+        this.interactWithGrid = new InteractWithGrid(player);
         this.ListenCellClicked();
     }
 
@@ -22,8 +26,26 @@ class GridForGame extends GridComponent {
             if (gridAreaMatch) {
                 const x = parseInt(gridAreaMatch[1], 10);
                 const y = parseInt(gridAreaMatch[2], 10);
-                this.placeImage(x, y, './ressources/CharacterBack.png');
-                console.log('x:', x, 'y:', y);
+                const cell = this.interactWithGrid.createCell(x, y);
+
+                switch (lastClickedElement) {
+                    case document.getElementById('pickaxe'):
+                        if(cell.getCellState() === CellState.Breakable){
+                            cell.setCellState(CellState.Air);
+                        }
+                        this.displayCell(this.player, cell);                        
+                        break;
+                    case document.getElementById('mur'):
+                        if(cell.getCellState() === CellState.Air){
+                            cell.setCellState(CellState.PlacedByPlayer);
+                        }
+                        this.displayCell(this.player, cell);                        
+                        break;
+                    default:
+                        console.error('Aucun élément cliqué');
+                        break;
+                }
+                
             } else {
                 console.log('grid-area non trouvé');
             }
@@ -64,6 +86,8 @@ class GridForGame extends GridComponent {
             case CellState.Player:
                 this.displayPlayer(player, cell);
                 break;
+            case CellState.EndFlag:
+                this.placeImage(x, y, './ressources/EndFlag.png');
             default:
                 console.error('Type de cellule inconnu');
                 break;

@@ -1,21 +1,19 @@
 import { CellState } from "../class/cell.js";
-import { Grid } from "../class/grid.js";
 import { Player } from "../logic/player.js";
-import { mainGrid } from "../../script.js";
 function createGrid1(){
     const size = 9;
     let player = new Player(8,4,size);
-    // ROW 1
+    // COL 1
     player.getGrid().getCell(0,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(0,1).setCellState(CellState.Unbreakable);
-    player.getGrid().getCell(0,2).setCellState(CellState.Breakable);
+    player.getGrid().getCell(0,2).setCellState(CellState.EndFlag);
     player.getGrid().getCell(0,3).setCellState(CellState.Breakable);
     player.getGrid().getCell(0,4).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(0,5).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(0,6).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(0,7).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(0,8).setCellState(CellState.Unbreakable);
-    // ROW 2
+    // COL 2
     player.getGrid().getCell(1,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(1,1).setCellState(CellState.Air);
     player.getGrid().getCell(1,2).setCellState(CellState.Breakable);
@@ -25,7 +23,7 @@ function createGrid1(){
     player.getGrid().getCell(1,6).setCellState(CellState.Breakable);
     player.getGrid().getCell(1,7).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(1,8).setCellState(CellState.Unbreakable);
-    // ROW 3
+    // COL 3
     player.getGrid().getCell(2,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(2,1).setCellState(CellState.Air);
     player.getGrid().getCell(2,2).setCellState(CellState.Unbreakable);
@@ -35,7 +33,7 @@ function createGrid1(){
     player.getGrid().getCell(2,6).setCellState(CellState.Breakable);
     player.getGrid().getCell(2,7).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(2,8).setCellState(CellState.Unbreakable);
-    // ROW 4
+    // COL 4
     player.getGrid().getCell(3,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(3,1).setCellState(CellState.Breakable);
     player.getGrid().getCell(3,2).setCellState(CellState.Air);
@@ -45,7 +43,7 @@ function createGrid1(){
     player.getGrid().getCell(3,6).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(3,7).setCellState(CellState.Breakable);
     player.getGrid().getCell(3,8).setCellState(CellState.Unbreakable);
-    // ROW 5
+    // COL 5
     player.getGrid().getCell(4,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(4,1).setCellState(CellState.Breakable);
     player.getGrid().getCell(4,2).setCellState(CellState.Air);
@@ -55,7 +53,7 @@ function createGrid1(){
     player.getGrid().getCell(4,6).setCellState(CellState.Breakable);
     player.getGrid().getCell(4,7).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(4,8).setCellState(CellState.Unbreakable);
-    // ROW 6
+    // COL 6
     player.getGrid().getCell(5,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(5,1).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(5,2).setCellState(CellState.Air);
@@ -65,7 +63,7 @@ function createGrid1(){
     player.getGrid().getCell(5,6).setCellState(CellState.Air);
     player.getGrid().getCell(5,7).setCellState(CellState.Air);
     player.getGrid().getCell(5,8).setCellState(CellState.Unbreakable);
-    // ROW 7
+    // COL 7
     player.getGrid().getCell(6,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(6,1).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(6,2).setCellState(CellState.Air);
@@ -75,7 +73,7 @@ function createGrid1(){
     player.getGrid().getCell(6,6).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(6,7).setCellState(CellState.Air);
     player.getGrid().getCell(6,8).setCellState(CellState.Unbreakable);
-    // ROW 8
+    // COL 8
     player.getGrid().getCell(7,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(7,1).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(7,2).setCellState(CellState.Breakable);
@@ -85,7 +83,7 @@ function createGrid1(){
     player.getGrid().getCell(7,6).setCellState(CellState.Air);
     player.getGrid().getCell(7,7).setCellState(CellState.Air);
     player.getGrid().getCell(7,8).setCellState(CellState.Unbreakable);
-    // ROW 9
+    // COL 9
     player.getGrid().getCell(8,0).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(8,1).setCellState(CellState.Unbreakable);
     player.getGrid().getCell(8,2).setCellState(CellState.Unbreakable);

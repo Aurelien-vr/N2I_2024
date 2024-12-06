@@ -9,7 +9,7 @@ class GridComponent extends WebComponent {
         this.size=size;
         this.htmlNode.style.gridTemplateColumns = `repeat(${size}, 5em)`;
         this.htmlNode.style.gridTemplateRows = `repeat(${size}, 5em)`;
-        
+        this.htmlNode.style.backgroundImage = 'url("./ressources/Background.png")';
     }
 
     // Ajoute un élément à la grille

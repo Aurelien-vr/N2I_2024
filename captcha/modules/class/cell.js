@@ -3,8 +3,8 @@ const CellState = Object.freeze({
     Breakable: 'breakable',
     Unbreakable: 'unbreakable',
     PlacedByPlayer: 'placedByPlayer',
-    Player: 'player'
-
+    Player: 'player',
+    EndFlag:'endFlag'
 })
 
 class Cell{

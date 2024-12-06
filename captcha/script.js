@@ -1,13 +1,12 @@
-import { GridComponent } from "./modules/webcomponents/gridcomponent";
-import { WebComponent } from '../scripts/generators/webcomponent.js';
 import { GridForGame } from "./modules/webcomponents/gridforgame.js";
-import { Player } from "./modules/logic/player.js";
-import { CellState } from "./modules/class/cell.js";
 import { createGrid1 } from "./modules/differentgrids/grid1.js";
+import { setupImageInteractions } from "./modules/webcomponents/imginteraction.js";
+
 const size = 9;
+let player = createGrid1();
 
 // Crée la grille principale
-const mainGrid = new GridForGame(size);
+const mainGrid = new GridForGame(size,player);
 
 for (let x = 1; x <= size; x++) {
     for (let y = 1; y <= size; y++) {
@@ -15,14 +14,11 @@ for (let x = 1; x <= size; x++) {
     }
 }
 
+setupImageInteractions();
 // Ajoute la grille principale au document
 mainGrid.Bind(document.body);
 
-
-let player = createGrid1();
-
-
-
+// action listener sur les click
 mainGrid.displayGrid(player);
 
 export{mainGrid,size}

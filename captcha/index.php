@@ -8,7 +8,15 @@
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <h1>Captcha Page</h1>
+    <div id="objets">
+        <div id = "pickaxe">
+            <img src="./ressources/Pickaxe.png" alt="pioche">
+        </div>
+        <div id = "mur">
+            <img src="./ressources/BuiltWall.png" alt="pelle">
+        </div>
+    </div>
+        
     <script type="module" src="./script.js"></script>
 
 </body>
