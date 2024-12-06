@@ -9,11 +9,14 @@
     <h1 class="title">Bienvenue sur <span class="i">float</span>.</h1>
 <script type="module">
     import { Navbar } from "./scripts/generators/navbar.js";
+    import { BotDetector } from "./scripts/BotDetector.js";
     let navbar = new Navbar([
         "./captcha/index.php",
         "./cookie/index.php",
     ]);
     navbar.PrependBind(document.body);
+    const bd = new BotDetector();
+    
 </script>
 </body>
 </html>
