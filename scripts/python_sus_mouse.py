@@ -42,7 +42,7 @@ def consistent_clicks():
 
 # Lancer les comportements suspects
 print("sus moves working...")
-# suspicious_mouse_behavior()
+suspicious_mouse_behavior()
 print("sus cliking...")
 consistent_clicks()
 print("terminated.")
