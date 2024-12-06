@@ -6,7 +6,7 @@
 }
 body
 {
-    background-color: var(--color-background);
+    background-image: url("../Fond.webp");
 }
 
 h1
@@ -35,14 +35,24 @@ p
 .navbar-link
 {
     color: var(--color-blue);
-    transition: 300ms ease color;
+    border: 0.1em solid;
+    border-radius: 0.35em;
+    padding: 0.2em;
     margin: 1em;
     font-size: large;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    text-transform: uppercase;
+    transition: ease 300ms transform .16s;
+    text-decoration: none;
 }
-
 .navbar-link:hover
 {
+    transform: translateY(-.3em) scale(1.08);
     color: var(--color-lightblue);
+    z-index: 1
 }
 
 .title
