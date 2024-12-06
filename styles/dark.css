@@ -9,6 +9,19 @@ body
     background-color: var(--color-background);
 }
 
+h1
+{
+    margin: 18%;
+    text-align: center;
+}
+
+p
+{
+    margin: 8%;
+    margin-right: 40%;
+    text-align: left;
+}
+
 .navbar
 {
     display: flex;
