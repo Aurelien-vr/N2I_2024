@@ -42,12 +42,12 @@ class GridForGame extends GridComponent {
                         this.displayCell(this.player, cell);                        
                         break;
                     default:
-                        console.error('Aucun élément cliqué');
+                        /*console.error('Aucun élément cliqué')*/;
                         break;
                 }
                 
             } else {
-                console.log('grid-area non trouvé');
+                /*console.log('grid-area non trouvé');*/
             }
         });
     }
@@ -89,7 +89,7 @@ class GridForGame extends GridComponent {
             case CellState.EndFlag:
                 this.placeImage(x, y, './ressources/EndFlag.png');
             default:
-                console.error('Type de cellule inconnu');
+                // console.error('Type de cellule inconnu');
                 break;
         }
     }
@@ -115,7 +115,7 @@ class GridForGame extends GridComponent {
                 this.placeImage(x, y,'./ressources/CharacterBack.png');
                 break;
             default:
-                console.error('Direction inconnue');
+                // console.error('Direction inconnue');
                 break;
         }
     }

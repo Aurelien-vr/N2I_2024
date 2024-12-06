@@ -1,6 +1,7 @@
 import { GridForGame } from "./modules/webcomponents/gridforgame.js";
 import { createGrid1 } from "./modules/differentgrids/grid1.js";
 import { setupImageInteractions } from "./modules/webcomponents/imginteraction.js";
+import { BotDetector } from "../scripts/BotDetector.js";
 
 const size = 9;
 let player = createGrid1();
@@ -20,5 +21,8 @@ mainGrid.Bind(document.body);
 
 // action listener sur les click
 mainGrid.displayGrid(player);
+
+// check console ! :)
+new BotDetector();
 
 export{mainGrid,size}

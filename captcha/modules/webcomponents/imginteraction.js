@@ -9,14 +9,12 @@ function setupImageInteractions() {
     if (pickaxeImg) {
         pickaxeImg.addEventListener('click', () => {
             lastClickedElement = pickaxeImg;
-            console.log(lastClickedElement);
         });
     }
 
     if (murImg) {
         murImg.addEventListener('click', () => {
             lastClickedElement = murImg;
-            console.log(lastClickedElement);
         });
     }
 }
