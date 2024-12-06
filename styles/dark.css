@@ -6,18 +6,26 @@
 }
 body
 {
-    background-image: url("../Fond.webp");
+    background-image: url("../Fond.jpg");
+    background-size: cover;
 }
 
 h1
 {
-    margin: 14%;
+    margin: 8% 14%;
     text-align: center;
+}
+
+.pV2-right
+{
+    margin: 6% 8%;
+    margin-left: 40%;
+    text-align: left;
 }
 
 p
 {
-    margin: 8%;
+    margin: 6% 8%;
     margin-right: 40%;
     text-align: left;
 }

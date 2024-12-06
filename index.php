@@ -14,6 +14,10 @@
             thématique tel que le cookie cliquer. En outre nous avons aussi choisi les défis suivant, a savoir le CAPCHA ludique, 
             la pire interface utilisateur possible, la touche rétro et le projet de crossover de jeux.
         </p>
+        <p class="pV2-right">
+        A l'attention de l'association <b>Race for Water</b>, qui met en service un nouveau catamaran a zéro émission de CO2, le MODX 70. 
+        Leur travail mérite bien d'être saluer après 10 ans d'existence et la réussite de se types de projet.
+        </p>
     </section>
 <script type="module">
     import { Navbar } from "./scripts/generators/navbar.js";
