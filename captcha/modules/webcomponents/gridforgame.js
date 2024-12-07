@@ -1,8 +1,8 @@
-import { GridComponent } from "./gridcomponent";
 import { CellState,Cell } from "../class/cell.js";
 import { Direction } from "../logic/player.js";
 import {InteractWithGrid} from "./interactwithgrid.js";
 import { lastClickedElement } from "./imginteraction.js";
+import { GridComponent } from "./gridcomponent.js";
 
 class GridForGame extends GridComponent {
     constructor(size,player, id = 'grid-component') {
