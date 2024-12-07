@@ -1,3 +1,4 @@
+# Test script written by ChatGPT (could also be referred as ChadGPT for this. thanks again, bud).
 import pyautogui
 import time
 import math

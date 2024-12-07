@@ -1,11 +1,20 @@
+// Script written by Mathéo Allart, for the "Nuit de l'Info 2024".
+// All rights reserved.
+
+
+
 // used to detect suspicious activities like a very uniform use of a mouse
 
 const clamp = (num, min, max) => Math.min(Math.max(num, min), max);
 
 class MouseSnapshot
 {
+    // current mouse state (position)
     static mouse;
+    // current mouse state (is clicking)
     static click;
+
+    // called whenever there's any movement from the mouse on the window
     static MouseListener(mouse)
     {
         MouseSnapshot.mouse = {
@@ -19,6 +28,7 @@ class MouseSnapshot
         }
     } 
 
+    // called whenever a click happens on the window
     static MouseClickListener(mouse)
     {
         MouseSnapshot.mouse = {
@@ -32,11 +42,13 @@ class MouseSnapshot
         };
     }
     
+    // used to compare two mouse's positions using another snapshot
     PosEquals(otherSnapShot)
     {
         return this.mouseX == otherSnapShot.mouseX && this.mouseY == otherSnapShot.mouseY;
     }
 
+    // creates an instant snapshot of the mouse state
     constructor()
     {
         let _mouse = MouseSnapshot.mouse;
@@ -55,6 +67,7 @@ class MouseSnapshot
     }
 }
 
+// detects if a bot or user is using the mouse
 class BotDetector
 {
     // array of states
@@ -151,6 +164,7 @@ class BotDetector
         return Math.acos(dotProduct / (magnitude1 * magnitude2)) * (180 / Math.PI);
       }
 
+      // returns a boolean that tells if the mouse's owner is a bot or human, using the GetLinearityDegree method.
       static IsBot()
       {
         return BotDetector.GetLinearityDegree(BotDetector.snapshots) > 0.0;
